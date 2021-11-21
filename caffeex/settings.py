@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'rest_framework.authtoken',
+    
+    #my apps
     'car',
     'client',
 ]
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
      'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
+AUTH_USER_MODEL  = 'client.Client'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

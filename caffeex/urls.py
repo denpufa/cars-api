@@ -17,16 +17,16 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from client.api.viewsets import ClientViewSet
-from car.api.viewsets import CarViewSet
 from rest_framework.authtoken.views import obtain_auth_token
-
+from client.api.views import ClientCreateView
+from car.api.views import CarListedView,CarDetailView
 router = routers.DefaultRouter()
-router.register(r'client',ClientViewSet,basename="Client")
-router.register(r'car',CarViewSet,basename="Car")
 
 urlpatterns = [
     path('',include(router.urls)),
+    path('client',ClientCreateView.as_view()),
+    path('cars',CarListedView.as_view()),
+    path('car/<str:plate>',CarDetailView.as_view()),
     path('admin/', admin.site.urls),
-    path('auth/', obtain_auth_token)
+    path('auth', obtain_auth_token)
 ]

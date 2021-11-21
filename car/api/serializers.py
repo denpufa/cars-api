@@ -7,3 +7,4 @@ class CarSerializer(ModelSerializer):
         fields = [
             'model','year','color','plate_number'
         ]
+        read_only_fields = ['owner'] 
