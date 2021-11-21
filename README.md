@@ -11,7 +11,11 @@
  - host/cars -> GET to get all cars
  - host/cars -> POST create a car with "plate_number"(string),"color"(string),"year"(number),"model"(String)
  - host/car/"plate_number" -> GET,UPDATE,DELETE a car
+ - you can use limit and offset to paginate if you want
 
+# Throttling
+ - anounnimous request without token 10/day
+ - users request 10000/day
  
 
 
